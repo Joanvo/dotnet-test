@@ -45,17 +45,14 @@ namespace TechTest.Controllers
                 ++i;
             }
 
+            if(robotResult != null)
+            {
+                (new EngineeringNotificationService()).NotifyRobotSelected(robotResult.Id);
+                (new CustomerNotificationService()).NotifyRobotSelected(robotResult.Id);
+                (new InvoicingNotificationService()).NotifyRobotSelected(robotResult.Id);
+            }
+
             return base.Ok(robotResult);
-        }
-
-        [HttpPost("finish")]
-        public IActionResult FinishTreatment(int robotId)
-        {
-            (new EngineeringNotificationService()).NotifyTreatmentFinished(robotId);
-            (new CustomerNotificationService()).NotifyTreatmentFinished(robotId);
-            (new InvoicingNotificationService()).NotifyTreatmentFinished(robotId);
-
-            return Ok();
         }
     }
 }

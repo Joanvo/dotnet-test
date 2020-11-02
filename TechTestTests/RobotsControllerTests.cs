@@ -16,6 +16,8 @@ namespace TechTestTests
                       .UseInMemoryDatabase(databaseName: "techtestdb-test")
                       .Options;
             var context = new DataContext(options);
+            //We're initializing an in memory database here, but it's empty
+            //If you want to add any entity you can do it in the context object
 
             var controller = new RobotsController(context);
 
@@ -23,6 +25,7 @@ namespace TechTestTests
 
             Assert.IsInstanceOfType(result, typeof(OkObjectResult));
 
+            context.Database.EnsureDeleted();
             context.Dispose();
         }
     }

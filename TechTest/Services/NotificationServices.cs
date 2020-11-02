@@ -8,7 +8,7 @@ namespace TechTest.Services
 {
     public class EngineeringNotificationService
     {
-        public void NotifyTreatmentFinished(int robotId)
+        public void NotifyRobotSelected(int robotId)
         {
             //For exercise purposes imagine there is some relevant code here
         }
@@ -16,7 +16,7 @@ namespace TechTest.Services
 
     public class CustomerNotificationService
     {
-        public void NotifyTreatmentFinished(int robotId)
+        public void NotifyRobotSelected(int robotId)
         {
             //For exercise purposes imagine there is some relevant code here
         }
@@ -24,7 +24,7 @@ namespace TechTest.Services
 
     public class InvoicingNotificationService
     {
-        public void NotifyTreatmentFinished(int robotId)
+        public void NotifyRobotSelected(int robotId)
         {
             //For exercise purposes imagine there is some relevant code here
         }
